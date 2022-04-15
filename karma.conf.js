@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/sudo-tasks'),
+      dir: require('path').join(__dirname, './coverage/cookbook'),
       subdir: '.',
       reporters: [
         { type: 'html' },

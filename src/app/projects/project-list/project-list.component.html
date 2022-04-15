@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success">New project</button>
+  </div>
+</div>
+<hr />
+<h3>Current Development Projects</h3>
+<div class="row">
+  <div class="col-xs-12">
+    <app-project-item
+      *ngFor="let projectEl of projects"
+      [project]="projectEl"
+    ></app-project-item>
+  </div>
+</div>
