@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { project } from '../project.model';
 import { projectService } from '../project.service';
 
@@ -13,7 +13,8 @@ export class ProjectDetailComponent implements OnInit {
   id: number;
 
   constructor(private projectService: projectService,
-              private route:ActivatedRoute) {}
+              private route:ActivatedRoute,
+              private router: Router) {}
 
   ngOnInit() {
     this.route.params
@@ -27,5 +28,10 @@ export class ProjectDetailComponent implements OnInit {
 
   onAddToTaskListList() {
     this.projectService.addtasksToTaskListList(this.project.tasks);
+  }
+
+  onEditProject() {
+    this.router.navigate(['edit'], {relativeTo: this.route});
+
   }
 }
