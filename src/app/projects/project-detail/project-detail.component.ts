@@ -32,6 +32,5 @@ export class ProjectDetailComponent implements OnInit {
 
   onEditProject() {
     this.router.navigate(['edit'], {relativeTo: this.route});
-
   }
 }
