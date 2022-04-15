@@ -14,6 +14,7 @@ import { TaskListListService } from './task-list/task-list-list.service';
 import { Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { ProjectStartComponent } from './projects/project-start/project-start.component';
+import { ProjectEditComponent } from './projects/project-edit/project-edit.component';
 
 const appRoutes: Routes = [];
 
@@ -29,6 +30,7 @@ const appRoutes: Routes = [];
     HeaderComponent,
     DropdownDirective,
     ProjectStartComponent,
+    ProjectEditComponent,
   ],
   imports: [
     BrowserModule,
