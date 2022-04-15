@@ -8,6 +8,7 @@ import { project } from '../../project.model';
 })
 export class ProjectItemComponent implements OnInit {
   @Input() project: project;
+  @Input() index: number;
 
 
   ngOnInit(): void {}
