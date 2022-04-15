@@ -13,6 +13,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { TaskListListService } from './task-list/task-list-list.service';
 import { Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { ProjectStartComponent } from './projects/project-start/project-start.component';
 
 const appRoutes: Routes = [];
 
@@ -27,6 +28,7 @@ const appRoutes: Routes = [];
     TaskListEditComponent,
     HeaderComponent,
     DropdownDirective,
+    ProjectStartComponent,
   ],
   imports: [
     BrowserModule,
