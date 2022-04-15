@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { project } from '../project.model';
 import { projectService } from '../project.service';
 
@@ -8,11 +9,21 @@ import { projectService } from '../project.service';
   styleUrls: ['./project-detail.component.css'],
 })
 export class ProjectDetailComponent implements OnInit {
-  @Input() project: project;
+  project: project;
+  id: number;
 
-  constructor(private projectService: projectService) {}
+  constructor(private projectService: projectService,
+              private route:ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.id = +params['id'];
+          this.project = this.projectService.getProject(this.id);
+        }
+      );
+  }
 
   onAddToTaskListList() {
     this.projectService.addtasksToTaskListList(this.project.tasks);

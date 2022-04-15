@@ -34,6 +34,10 @@ export class projectService {
     return this.projects.slice();
   }
 
+   getProject(index: number) {
+    return this.projects[index];
+  }
+
   addtasksToTaskListList(tasks: task[]) {
     this.slService.addtasks(tasks);
   }
