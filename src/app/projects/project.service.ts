@@ -1,11 +1,10 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { task } from '../shared/task.model';
 import { TaskListListService } from '../task-list/task-list-list.service';
 import { project } from './project.model';
 
 @Injectable()
 export class projectService {
-  projectSelected = new EventEmitter<project>();
   private projects: project[] = [
     new project(
       'Build Personal Course Project',

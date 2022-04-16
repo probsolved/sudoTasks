@@ -1,8 +1,8 @@
-import { EventEmitter } from "@angular/core";
+import { Subject } from "rxjs";
 import { task } from "../shared/task.model";
 
 export class TaskListListService {
-  tasksChanged = new EventEmitter<task[]>();
+  tasksChanged = new Subject<task[]>();
 
   private tasks: task[] = [
     new task('Bread slices', 5),
@@ -15,12 +15,12 @@ export class TaskListListService {
 
   addtask(task: task) {
     this.tasks.push(task);
-    this.tasksChanged.emit(this.tasks.slice());
+    this.tasksChanged.next(this.tasks.slice());
   }
 
   addtasks(tasks: task[]) {
     this.tasks.push(...tasks);
-    this.tasksChanged.emit(this.tasks.slice())
+    this.tasksChanged.next(this.tasks.slice())
 
   }
 }
