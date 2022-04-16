@@ -15,6 +15,7 @@ import { Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { ProjectStartComponent } from './projects/project-start/project-start.component';
 import { ProjectEditComponent } from './projects/project-edit/project-edit.component';
+import { GearsComponent } from './gears/gears.component';
 
 const appRoutes: Routes = [];
 
@@ -31,6 +32,7 @@ const appRoutes: Routes = [];
     DropdownDirective,
     ProjectStartComponent,
     ProjectEditComponent,
+    GearsComponent,
   ],
   imports: [
     BrowserModule,

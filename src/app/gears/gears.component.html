@@ -1,0 +1,80 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="col-xs-6">
+      <img
+        src="https://engagingleader.com/121-5-gears-being-a-present-productive-leader-when-theres-never-enough-time-podcast/5-gears-main-logo/"
+        alt="5 gears"
+        srcset=""
+        width="70%"
+        class="responsive"
+      />
+      <h3>
+        Currently in
+        <select
+          class="bootstrap-select"
+          aria-label="select"
+          (change)="SetDropDownValue($event)"
+        >
+          <option selected>which</option>
+          <option value="1">1st</option>
+          <option value="2">2nd</option>
+          <option value="3">3rd</option>
+          <option value="4">4th</option>
+          <option value="5">5th</option>
+        </select>
+        gear.
+      </h3>
+    </div>
+    <div class="col-xs-6" [ngSwitch]="dropDownValue">
+      <div *ngSwitchCase="'1'">
+        <h2>// Recharge Mode</h2>
+        <p class="badge badge-pill badge-primary margin-badge">
+          Personal Recharge
+        </p>
+        <p class="badge badge-pill badge-primary margin-badge">
+          Completely Unplugged
+        </p>
+      </div>
+
+      <div *ngSwitchCase="'2'">
+        <h2>// Connect Mode</h2>
+        <p class="badge badge-pill badge-primary margin-badge">
+          Present with Family/Friends
+        </p>
+        <p class="badge badge-pill badge-primary margin-badge">No Work</p>
+      </div>
+      <div *ngSwitchCase="'3'">
+        <h2>// Social Mode</h2>
+        <p class="badge badge-pill badge-primary margin-badge">
+          Present with people
+        </p>
+        <p class="badge badge-pill badge-primary margin-badge">
+          Can shift up or down easily
+        </p>
+        .
+        <p class="badge badge-pill badge-primary margin-badge">
+          Interrupt as needed
+        </p>
+      </div>
+      <div *ngSwitchCase="'4'">
+        <h2>// Task Mode</h2>
+        <p class="badge badge-pill badge-primary margin-badge">Multi-tasking</p>
+        <p class="badge badge-pill badge-primary margin-badge">Working hard</p>
+        <p class="badge badge-pill badge-primary margin-badge">
+          Interupt only if necessary
+        </p>
+      </div>
+      <div *ngSwitchCase="'5'">
+        <h2>// Focus Mode</h2>
+        <p class="badge badge-pill badge-primary margin-badge">Task-centered</p>
+        <p class="badge badge-pill badge-primary margin-badge">fully focused</p>
+        <p class="badge badge-pill badge-primary margin-badge">
+          moving quickly
+        </p>
+        <p class="badge badge-pill badge-primary margin-badge">
+          Please do not interrupt
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

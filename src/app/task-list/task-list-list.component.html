@@ -8,8 +8,9 @@
         style="cursor: pointer"
         *ngFor="let task of tasks"
       >
-        {{ task.name }}, {{ task.priority }}</a
-      >
+        {{ task.name }}
+        <span class="badge badge-pill badge-primary">{{ task.priority }} </span>
+      </a>
     </ul>
   </div>
 </div>
