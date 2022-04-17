@@ -5,8 +5,8 @@ export class TaskListListService {
   tasksChanged = new Subject<task[]>();
 
   private tasks: task[] = [
-    new task('Bread slices', 5),
-    new task('Butter', 2)
+    new task('Private Task 1', 1),
+    new task('Private Task 2', 2)
   ];
 
   gettasks() {

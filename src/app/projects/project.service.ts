@@ -25,6 +25,36 @@ export class projectService {
         new task('Task 2', 2),
       ]
     ),
+        new project(
+      'Update Recipes App',
+      'Update the recipes app from Academind videos with Max.',
+      'https://cdn.pixabay.com/photo/2020/04/04/03/42/space-5000696_1280.png',
+      [
+        new task('Add forms content', 1),
+        new task('Update routing', 3),
+        new task('Style views', 1),
+      ]
+    ),
+        new project(
+      'Update sudoTasks app',
+      'sudoTasks is a project management app for development.',
+      'https://cdn.pixabay.com/photo/2020/04/04/03/42/space-5000696_1280.png',
+      [
+        new task('Fix forms for adding / editing projects', 2),
+        new task('Add component for task details', 1),
+        new task('Fix gears component to save status', 1),
+      ]
+    ),
+        new project(
+      'Convert Get Stumped trivia app to Angular',
+      'Transition from a pure html/css/js app to an Angular.',
+      'https://cdn.pixabay.com/photo/2020/04/04/03/42/space-5000696_1280.png',
+      [
+        new task('Map out application structure', 1),
+        new task('Create components', 1),
+        new task('Style views', 1),
+      ]
+    ),
   ];
 
   constructor(private slService: TaskListListService) {}
