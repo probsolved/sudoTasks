@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ProjectStartComponent } from './projects/project-start/project-start.component';
 import { ProjectEditComponent } from './projects/project-edit/project-edit.component';
 import { GearsComponent } from './gears/gears.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [];
 
@@ -33,6 +34,7 @@ const appRoutes: Routes = [];
     ProjectStartComponent,
     ProjectEditComponent,
     GearsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
