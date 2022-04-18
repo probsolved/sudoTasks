@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CalendarModule, DateAdapter} from 'angular-calendar';
+import {adapterFactory} from 'angular-calendar/date-adapters/date-fns';
 
 import { AppComponent } from './app.component';
 import { ProjectsComponent } from './projects/projects.component';
@@ -17,6 +19,7 @@ import { ProjectStartComponent } from './projects/project-start/project-start.co
 import { ProjectEditComponent } from './projects/project-edit/project-edit.component';
 import { GearsComponent } from './gears/gears.component';
 import { FooterComponent } from './footer/footer.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 const appRoutes: Routes = [];
 
@@ -35,10 +38,18 @@ const appRoutes: Routes = [];
     ProjectEditComponent,
     GearsComponent,
     FooterComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserModule,
+    AppRoutingModule,
+
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    })
   ],
   providers: [TaskListListService],
   bootstrap: [AppComponent],
