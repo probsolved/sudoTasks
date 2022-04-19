@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CalendarModule, DateAdapter} from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ProjectsComponent } from './projects/projects.component';
@@ -47,6 +47,7 @@ const appRoutes: Routes = [];
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
