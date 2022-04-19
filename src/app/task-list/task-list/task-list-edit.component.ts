@@ -34,12 +34,14 @@ export class TaskListEditComponent implements OnInit, OnDestroy {
 
   }
 
-  onAddItem(form: NgForm) {
+  onSubmit(form: NgForm) {
     const value = form.value;
     const newtask = new task(value.name, value.priority);
     if (this.editMode) {
       this.tlService.updateTask(this.editedTaskIndex, newtask) ; }
         else {this.tlService.addtask(newtask);}
+    this.editMode = false;
+    form.reset();
 
   }
     ngOnDestroy(): void {
