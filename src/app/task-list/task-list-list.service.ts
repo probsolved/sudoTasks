@@ -3,6 +3,8 @@ import { task } from "../shared/task.model";
 
 export class TaskListListService {
   tasksChanged = new Subject<task[]>();
+  startedEditing = new Subject<number>();
+
 
   private tasks: task[] = [
     new task('Private Task 1', 1),
@@ -11,6 +13,10 @@ export class TaskListListService {
 
   gettasks() {
     return this.tasks.slice();
+  }
+
+    getTask(index:number) {
+    return this.tasks[index];
   }
 
   addtask(task: task) {

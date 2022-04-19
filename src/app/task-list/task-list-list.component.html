@@ -6,7 +6,8 @@
       <a
         class="list-group-item"
         style="cursor: pointer"
-        *ngFor="let task of tasks"
+        *ngFor="let task of tasks; let i = index"
+        (click)="onEditTask(i)"
       >
         {{ task.name }}
         <span class="badge badge-pill badge-primary pull-right">

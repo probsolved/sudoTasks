@@ -57,7 +57,7 @@ export class projectService {
     ),
   ];
 
-  constructor(private slService: TaskListListService) {}
+  constructor(private tlService: TaskListListService) {}
 
   getprojects() {
     return this.projects.slice();
@@ -68,6 +68,6 @@ export class projectService {
   }
 
   addtasksToTaskListList(tasks: task[]) {
-    this.slService.addtasks(tasks);
+    this.tlService.addtasks(tasks);
   }
 }

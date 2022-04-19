@@ -24,6 +24,11 @@ export class TaskListListComponent implements OnInit, OnDestroy {
       );
   }
 
+  onEditTask(index: number) {
+    this.tlService.startedEditing.next(index);
+
+  }
+
   ngOnDestroy(): void {
       this.igChangeSub.unsubscribe();
   }
