@@ -48,6 +48,11 @@ export class TaskListEditComponent implements OnInit, OnDestroy {
     this.tlForm.reset();
     this.editMode = false;
   }
+
+  onDelete() {
+    this.tlService.deleteTask(this.editedTaskIndex);
+    this.onClear();
+  }
     ngOnDestroy(): void {
       this.subscription.unsubscribe();
   }

@@ -32,4 +32,9 @@ export class TaskListListService {
     this.tasks[index] = newtask;
     this.tasksChanged.next(this.tasks.slice());
   }
+
+  deleteTask(index:number) {
+    this.tasks.splice(index, 1);
+    this.tasksChanged.next(this.tasks.slice());
+  }
 }
