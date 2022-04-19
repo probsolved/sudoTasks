@@ -27,6 +27,9 @@ export class TaskListListService {
   addtasks(tasks: task[]) {
     this.tasks.push(...tasks);
     this.tasksChanged.next(this.tasks.slice())
-
+  }
+  updateTask(index: number, newtask: task) {
+    this.tasks[index] = newtask;
+    this.tasksChanged.next(this.tasks.slice());
   }
 }
