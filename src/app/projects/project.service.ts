@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { task } from '../shared/task.model';
 import { TaskListListService } from '../task-list/task-list-list.service';
 import { project } from './project.model';
 
 @Injectable()
 export class projectService {
+  projectsChanged = new Subject<project[]>();
+
   private projects: project[] = [
     new project(
       'Build Personal Course Project',
@@ -63,11 +66,27 @@ export class projectService {
     return this.projects.slice();
   }
 
-   getProject(index: number) {
+  getProject(index: number) {
     return this.projects[index];
   }
 
   addtasksToTaskListList(tasks: task[]) {
     this.tlService.addtasks(tasks);
   }
+
+  addProject(project: project) {
+    this.projects.push(project);
+    this.projectsChanged.next(this.projects.slice());
+  }
+
+  updateProject(index: number, newProject: project) {
+    this.projects[index] = newProject;
+        this.projectsChanged.next(this.projects.slice())
+  }
+
+  deleteProject(index:number) {
+    this.projects.splice(index, 1);
+    this.projectsChanged.next(this.projects.slice());
+  }
+
 }

@@ -21,6 +21,7 @@ import { ProjectEditComponent } from './projects/project-edit/project-edit.compo
 import { GearsComponent } from './gears/gears.component';
 import { FooterComponent } from './footer/footer.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { projectService } from './projects/project.service';
 
 const appRoutes: Routes = [];
 
@@ -53,7 +54,7 @@ const appRoutes: Routes = [];
       useFactory: adapterFactory,
     })
   ],
-  providers: [TaskListListService],
+  providers: [TaskListListService, projectService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

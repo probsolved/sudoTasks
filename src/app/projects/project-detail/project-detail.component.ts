@@ -33,4 +33,9 @@ export class ProjectDetailComponent implements OnInit {
   onEditProject() {
     this.router.navigate(['edit'], {relativeTo: this.route});
   }
+
+  onDeleteProject() {
+    this.projectService.deleteProject(this.id);
+    this.router.navigate(['/projects']);
+  }
 }

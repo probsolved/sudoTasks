@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Params } from '@angular/router';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { projectService } from '../project.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class ProjectEditComponent implements OnInit {
   editMode = false;
   projectForm: FormGroup
 
-  constructor(private route: ActivatedRoute, private projectService: projectService) { }
+  constructor(private route: ActivatedRoute, private projectService: projectService, private router: Router) { }
 
   ngOnInit() {
     this.route.params
@@ -26,25 +26,70 @@ export class ProjectEditComponent implements OnInit {
       )
   }
 
+  get controls() { // a getter!
+  return (<FormArray>this.projectForm.get('tasks')).controls;
+}
+
   onSubmit() {
-    console.log(this.projectForm);
+    // const newProject = new project(
+    //   this.projectForm.value['name'],
+    //   this.projectForm.value['description'],
+    //   this.projectForm.value['imagePath'],
+    //   this.projectForm.value['tasks']
+    //   );
+    if (this.editMode) {
+      this.projectService.updateProject(this.id, this.projectForm.value)
+    } else {
+      this.projectService.addProject(this.projectForm.value)
+    }
+    this.onCancel();
   }
+
+  onAddTask() {
+    (<FormArray>this.projectForm.get('tasks')).push(
+      new FormGroup({
+        'name': new FormControl(null, Validators.required),
+        'priority': new FormControl()
+      })
+    )
+  }
+
+  onDeleteTask(index: number) {
+    (<FormArray>this.projectForm.get('tasks')).removeAt(index);
+  }
+
+  onCancel() {
+    this.router.navigate(['../'], {relativeTo: this.route});
+  }
+
   private initForm() {
     let projectName = '';
     let projectImagePath = '';
     let projectDescription = '';
+    let projectTasks = new FormArray([]);
 
     if (this.editMode) {
       const project = this.projectService.getProject(this.id);
       projectName = project.name;
       projectImagePath = project.imagePath;
       projectDescription = project.description;
+      if (project['tasks']) {
+        for (let task of project.tasks) {
+          projectTasks.push(
+            new FormGroup({
+              'name' : new FormControl(task.name, Validators.required),
+              'priority': new FormControl(task.priority)
+            })
+          )
+        }
+      }
     }
 
     this.projectForm = new FormGroup({
-      'name': new FormControl(projectName),
+      'name': new FormControl(projectName, Validators.required),
       'imagePath' : new FormControl(projectImagePath),
-      'description' : new FormControl(projectDescription)
+      'description' : new FormControl(projectDescription, Validators.required),
+      'tasks' : projectTasks
     });
 
   }
