@@ -7,10 +7,24 @@
     </div>
   </div>
   <hr />
+  <!--  -->
+
+  <!-- Original from here down -->
   <div class="row">
     <div>
-      <mwl-calendar-month-view [viewDate]="viewDate"> </mwl-calendar-month-view>
-      <!-- <mwl-calendar-week-view [viewDate]="viewDate"> </mwl-calendar-week-view> -->
+      <!-- <mwl-calendar-month-view [viewDate]="viewDate"> </mwl-calendar-month-view> -->
+      <mwl-calendar-week-view
+        [viewDate]="viewDate"
+        [dayStartHour]="9"
+        [dayEndHour]="17"
+      >
+      </mwl-calendar-week-view>
+
+      <!-- <mwl-calendar-day-view
+        [viewDate]="viewDate"
+        [dayStartHour]="9"
+        [dayEndHour]="17"
+      ></mwl-calendar-day-view> -->
     </div>
   </div>
 </div>

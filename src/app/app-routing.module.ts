@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { CalendarDayViewComponent, CalendarMonthViewComponent, CalendarWeekViewComponent } from "angular-calendar";
 import { ProjectDetailComponent } from "./projects/project-detail/project-detail.component";
 import { ProjectEditComponent } from "./projects/project-edit/project-edit.component";
 import { ProjectStartComponent } from "./projects/project-start/project-start.component";
@@ -13,11 +14,12 @@ const appRoutes: Routes = [
     {path: 'new', component: ProjectEditComponent},
     {path: ':id', component: ProjectDetailComponent},
     {path: ':id/edit', component: ProjectEditComponent}
-
   ]},
-  {path: 'task-list-list', component: TaskListListComponent}
+  {path: 'task-list-list', component: TaskListListComponent},
 
-
+  {path: 'month', component: CalendarMonthViewComponent},
+  {path: 'day', component: CalendarDayViewComponent},
+  {path: 'week', component: CalendarWeekViewComponent}
 ];
 
 @NgModule({

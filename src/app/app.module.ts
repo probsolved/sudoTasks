@@ -20,9 +20,8 @@ import { ProjectStartComponent } from './projects/project-start/project-start.co
 import { ProjectEditComponent } from './projects/project-edit/project-edit.component';
 import { GearsComponent } from './gears/gears.component';
 import { FooterComponent } from './footer/footer.component';
-import { CalendarComponent } from './calendar/calendar.component';
 import { projectService } from './projects/project.service';
-
+import { CommonModule } from '@angular/common';
 const appRoutes: Routes = [];
 
 @NgModule({
@@ -40,7 +39,6 @@ const appRoutes: Routes = [];
     ProjectEditComponent,
     GearsComponent,
     FooterComponent,
-    CalendarComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +47,7 @@ const appRoutes: Routes = [];
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    CommonModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
