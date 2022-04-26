@@ -22,6 +22,8 @@ import { GearsComponent } from './gears/gears.component';
 import { FooterComponent } from './footer/footer.component';
 import { projectService } from './projects/project.service';
 import { CommonModule } from '@angular/common';
+import { DeferralsComponent } from './deferrals/deferrals.component';
+
 const appRoutes: Routes = [];
 
 @NgModule({
@@ -39,6 +41,7 @@ const appRoutes: Routes = [];
     ProjectEditComponent,
     GearsComponent,
     FooterComponent,
+    DeferralsComponent,
   ],
   imports: [
     BrowserModule,
