@@ -6,11 +6,12 @@ export class TaskListListService {
   startedEditing = new Subject<number>();
 
 
-  private tasks: task[] = [
-    new task('Private Task 1', 1),
-    new task('Private Task 2', 2)
-  ];
-  defertask: any;
+  // private tasks: task[] = [
+  //   new task('Private Task 1', 1),
+  //   new task('Private Task 2', 2)
+  // ];
+    private tasks: task[] = [];
+
 
   gettasks() {
     return this.tasks.slice();
