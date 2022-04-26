@@ -128,6 +128,18 @@ export class DeferralsComponent {
       },
       draggable: true,
     },
+        {
+      start: addHours(startOfDay(new Date()), 9),
+      end: addHours(new Date(), 3),
+      title: 'Test for Paul',
+      color: colors.red,
+      actions: this.actions,
+      resizable: {
+        beforeStart: true,
+        afterEnd: true,
+      },
+      draggable: true,
+    },
   ];
 
   activeDayIsOpen: boolean = true;

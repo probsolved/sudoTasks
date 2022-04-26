@@ -38,4 +38,8 @@ export class ProjectDetailComponent implements OnInit {
     this.projectService.deleteProject(this.id);
     this.router.navigate(['/projects']);
   }
+
+  onDeferTask() {
+    console.log(this.project.tasks)
+  }
 }

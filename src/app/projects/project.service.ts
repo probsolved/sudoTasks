@@ -81,7 +81,7 @@ export class projectService {
 
   updateProject(index: number, newProject: project) {
     this.projects[index] = newProject;
-        this.projectsChanged.next(this.projects.slice())
+    this.projectsChanged.next(this.projects.slice())
   }
 
   deleteProject(index:number) {

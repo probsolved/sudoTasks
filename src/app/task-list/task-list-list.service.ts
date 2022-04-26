@@ -10,6 +10,7 @@ export class TaskListListService {
     new task('Private Task 1', 1),
     new task('Private Task 2', 2)
   ];
+  defertask: any;
 
   gettasks() {
     return this.tasks.slice();
