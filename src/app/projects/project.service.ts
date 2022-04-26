@@ -62,6 +62,12 @@ export class projectService {
 
   constructor(private tlService: TaskListListService) {}
 
+  setProjects(projects: project[]) {
+    this.projects = projects;
+    this.projectsChanged.next(this.projects.slice());
+
+  }
+
   getprojects() {
     return this.projects.slice();
   }
