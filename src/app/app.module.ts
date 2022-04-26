@@ -26,6 +26,7 @@ import { FooterComponent } from './footer/footer.component';
 import { projectService } from './projects/project.service';
 import { CommonModule } from '@angular/common';
 import { DeferralsComponent } from './deferrals/deferrals.component';
+import { AuthComponent } from './auth/auth.component';
 
 const appRoutes: Routes = [];
 
@@ -45,6 +46,7 @@ const appRoutes: Routes = [];
     GearsComponent,
     FooterComponent,
     DeferralsComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

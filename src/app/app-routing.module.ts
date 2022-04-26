@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { CalendarDayViewComponent, CalendarMonthViewComponent, CalendarWeekViewComponent } from "angular-calendar";
+import { AuthComponent } from "./auth/auth.component";
 import { DeferralsComponent } from "./deferrals/deferrals.component";
 import { ProjectDetailComponent } from "./projects/project-detail/project-detail.component";
 import { ProjectEditComponent } from "./projects/project-edit/project-edit.component";
@@ -15,12 +16,10 @@ const appRoutes: Routes = [
     {path: '', component: ProjectStartComponent},
     {path: 'new', component: ProjectEditComponent},
     {path: ':id', component: ProjectDetailComponent, resolve: [ProjectsResolverService]},
-    {path: ':id/edit', component: ProjectEditComponent, resolve: [ProjectsResolverService]}
-  ]},
-  {path: 'task-list-list', component: TaskListListComponent},
-
-  {path: 'month', component: CalendarMonthViewComponent},
-  {path: 'calendar', component: DeferralsComponent}
+    {path: ':id/edit', component: ProjectEditComponent, resolve: [ProjectsResolverService]}]},
+  {path: 'task-list', component: TaskListListComponent},
+  {path: 'calendar', component: DeferralsComponent},
+  {path: 'auth', component: AuthComponent}
 
 ];
 
