@@ -181,9 +181,11 @@ export class DeferralsComponent {
   handleEvent(action: string, event: CalendarEvent): void {
     //Create new modal here
 
-    // this.modalData = { event, action };
-    // this.modal.open(this.modalContent, { size: 'lg' });
+    this.modalData = { event, action };
+    this.modal.open(this.modalContent, { size: 'lg' });
+
   }
+
 
   addEvent(): void {
     this.events = [
