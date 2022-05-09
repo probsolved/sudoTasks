@@ -5,11 +5,11 @@ const express = require("express");
 const app = express();
 
 // Serve static build files from the "dist" directory
-app.use(express.static("./dist/sudoTasks"));
+app.use(express.static("./dist/superuserdo"));
 
 // Route incoming server requests to the correct files
 app.get("/*", (req, res) =>
-  res.sendFile("index.html", { root: "dist/sudoTasks/" })
+  res.sendFile("index.html", { root: "dist/superuserdo/" })
 );
 
 // Start the app on the default Heroku port
