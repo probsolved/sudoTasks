@@ -5,6 +5,10 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalModule } from 'ngb-modal';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 
 import { AppComponent } from './app.component';
@@ -57,6 +61,8 @@ const appRoutes: Routes = [];
     HttpClientModule,
     ReactiveFormsModule,
     CommonModule,
+    ModalModule,
+    NgbModalModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
