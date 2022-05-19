@@ -8,3 +8,7 @@ ul li {
 button {
   margin: 2px;
 }
+
+.done {
+  text-decoration: line-through;
+}

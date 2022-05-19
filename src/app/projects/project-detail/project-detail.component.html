@@ -53,7 +53,7 @@
       >
         <div class="row">
           <div class="col-xs-6">
-            {{ task.name }}
+            <span id="done">{{ task.name }}</span>
             <span class="badge badge-pill badge-primary pull-right">
               Priority: {{ task.priority }}</span
             >
@@ -64,6 +64,7 @@
               data-toggle="tooltip"
               data-placement="top"
               title="Mark task as done."
+              (click)="onDoneTask()"
             >
               Done
             </button>

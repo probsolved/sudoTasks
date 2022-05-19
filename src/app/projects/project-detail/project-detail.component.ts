@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { TaskListListService } from 'src/app/task-list/task-list-list.service';
 import { project } from '../project.model';
 import { projectService } from '../project.service';
 
@@ -9,10 +10,12 @@ import { projectService } from '../project.service';
   styleUrls: ['./project-detail.component.css'],
 })
 export class ProjectDetailComponent implements OnInit {
+  [x: string]: any;
   project: project;
   id: number;
 
   constructor(private projectService: projectService,
+    private tlService: TaskListListService,
               private route:ActivatedRoute,
               private router: Router) {}
 
@@ -39,7 +42,14 @@ export class ProjectDetailComponent implements OnInit {
     this.router.navigate(['/projects']);
   }
 
+  onDoneTask() {
+    var doneTask = document.getElementById('done');
+    doneTask.classList.add('done');
+  }
+
   onDeferTask() {
     console.log(this.project.tasks)
   }
+
+
 }
