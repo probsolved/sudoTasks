@@ -21,6 +21,7 @@ export class AuthComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     if (!form.valid) {
+      console.log("form invalid");
       return;
     }
     const email = form.value.email;
@@ -28,13 +29,12 @@ export class AuthComponent implements OnInit {
 
     if (this.isLoginMode) {
     this.authService.signUp(email, password).subscribe(resData => {
-      console.log(resData)
-    }, error => {
-      console.log(error)
-    } );
+        console.log(resData)
+        }, error => {
+        console.log(error)
+        }
+      );
     }
-
-
     form.reset()
   }
 
