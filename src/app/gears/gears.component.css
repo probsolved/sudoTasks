@@ -1,5 +1,14 @@
+.header-container {
+  margin: 50px;
+}
+
+
 .margin-badge {
   margin-right: 15px;
   float:inline-right;
   padding: 10px;
+}
+
+.container.spaced {
+  margin-bottom: 30px;
 }
