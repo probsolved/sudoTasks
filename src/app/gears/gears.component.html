@@ -15,72 +15,55 @@
         width="30%"
         class="responsive"
       />
-      <h3>
-        Currently in
-        <select
-          class="bootstrap-select"
-          aria-label="select"
-          (change)="SetDropDownValue($event)"
-        >
-          <option selected>which</option>
-          <option value="1">1st</option>
-          <option value="2">2nd</option>
-          <option value="3">3rd</option>
-          <option value="4">4th</option>
-          <option value="5">5th</option>
-        </select>
-        gear.
-      </h3>
+      <div class="col-xs-6">
+        <h3>
+          Currently in
+          <select
+            class="bootstrap-select"
+            aria-label="select"
+            (change)="SetDropDownValue($event)"
+          >
+            <option selected>which</option>
+            <option value="1">1st</option>
+            <option value="2">2nd</option>
+            <option value="3">3rd</option>
+            <option value="4">4th</option>
+            <option value="5">5th</option>
+          </select>
+          gear.
+        </h3>
+      </div>
     </div>
     <div class="col-xs-6" [ngSwitch]="dropDownValue">
       <div *ngSwitchCase="'1'">
         <h2>// Recharge Mode</h2>
-        <p class="badge badge-pill badge-primary margin-badge">
-          Personal Recharge
-        </p>
-        <p class="badge badge-pill badge-primary margin-badge">
-          Completely Unplugged
-        </p>
+        <p class="badge rounded-pill bg-primary">Personal Recharge</p>
+        <p class="badge rounded-pill bg-primary">Completely Unplugged</p>
       </div>
 
       <div *ngSwitchCase="'2'">
         <h2>// Connect Mode</h2>
-        <p class="badge badge-pill badge-primary margin-badge">
-          Present with Family/Friends
-        </p>
-        <p class="badge badge-pill badge-primary margin-badge">No Work</p>
+        <p class="badge rounded-pill bg-primary">Present with Family/Friends</p>
+        <p class="badge rounded-pill bg-primary">No Work</p>
       </div>
       <div *ngSwitchCase="'3'">
         <h2>// Social Mode</h2>
-        <p class="badge badge-pill badge-primary margin-badge">
-          Present with people
-        </p>
-        <p class="badge badge-pill badge-primary margin-badge">
-          Can shift up or down easily
-        </p>
-        .
-        <p class="badge badge-pill badge-primary margin-badge">
-          Interrupt as needed
-        </p>
+        <p class="badge rounded-pill bg-primary">Present with people</p>
+        <p class="badge rounded-pill bg-primary">Can shift up or down easily</p>
+        <p class="badge rounded-pill bg-primary">Interrupt as needed</p>
       </div>
       <div *ngSwitchCase="'4'">
         <h2>// Task Mode</h2>
-        <p class="badge badge-pill badge-primary margin-badge">Multi-tasking</p>
-        <p class="badge badge-pill badge-primary margin-badge">Working hard</p>
-        <p class="badge badge-pill badge-primary margin-badge">
-          Interupt only if necessary
-        </p>
+        <p class="badge rounded-pill bg-primary">Multi-tasking</p>
+        <p class="badge rounded-pill bg-primary">Working hard</p>
+        <p class="badge rounded-pill bg-primary">Interupt only if necessary</p>
       </div>
       <div *ngSwitchCase="'5'">
         <h2>// Focus Mode</h2>
-        <p class="badge badge-pill badge-primary margin-badge">Task-centered</p>
-        <p class="badge badge-pill badge-primary margin-badge">fully focused</p>
-        <p class="badge badge-pill badge-primary margin-badge">
-          moving quickly
-        </p>
-        <p class="badge badge-pill badge-primary margin-badge">
-          Please do not interrupt
-        </p>
+        <p class="badge rounded-pill bg-primary">Task-centered</p>
+        <p class="badge rounded-pill bg-primary">fully focused</p>
+        <p class="badge rounded-pill bg-primary">moving quickly</p>
+        <p class="badge rounded-pill bg-primary">Please do not interrupt</p>
       </div>
     </div>
   </div>

@@ -185,22 +185,66 @@
 
 <ng-template #modalContent let-close="close">
   <div class="modal-header">
-    <h5 class="modal-title">Event action occurred</h5>
+    <h5 class="modal-title">Task: {{ modalData?.event.title }}</h5>
     <button type="button" class="close" (click)="close()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
     <div>
-      Action:
-      <pre>{{ modalData?.action }}</pre>
+      Associated Project:
+      <pre>Project info here</pre>
     </div>
     <div>
-      Event:
-      <pre>{{ modalData?.event | json }}</pre>
+      Details:
+      <pre>Task details here</pre>
     </div>
   </div>
+  <!-- <div>
+      Action:
+      <pre>{{ modalData?.action }}</pre>
+    </div> -->
+  <!-- <div>
+      Event:
+      <pre>{{ modalData?.event | json }}</pre>
+    </div> -->
   <div class="modal-footer">
+    <div>
+      <button
+        class="btn btn-success"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="Mark task as done."
+        (click)="onDoneTask()"
+      >
+        Done
+      </button>
+      <button
+        class="btn btn-info"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="Delegate task to another person"
+      >
+        Delegate
+      </button>
+      <button
+        (click)="onDeferTask()"
+        class="btn btn-warning"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="Defer task to a specific date"
+      >
+        Defer
+      </button>
+      <button
+        class="btn btn-danger"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="Delete task entirely"
+      >
+        Delete
+      </button>
+    </div>
     <button type="button" class="btn btn-outline-secondary" (click)="close()">
       OK
     </button>
