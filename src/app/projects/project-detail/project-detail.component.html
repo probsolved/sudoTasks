@@ -17,11 +17,20 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="btn-group" appDropdown>
-      <button type="button" class="btn btn-primary dropdown-toggle">
+      <button class="btn btn-secondary" (click)="onAddToTaskListList()">
+        Add to Task List
+      </button>
+      <!-- <button type="button" class="btn btn-primary dropdown-toggle">
         Manage project <span class="caret"></span>
+      </button> -->
+      <button class="btn btn-warning" (click)="onEditProject()">
+        Edit Project
+      </button>
+      <button class="btn btn-danger" (click)="onDeleteProject()">
+        Delete Project
       </button>
 
-      <ul class="dropdown-menu">
+      <!-- <ul class="dropdown-menu">
         <li>
           <a (click)="onAddToTaskListList()" style="cursor: pointer"
             >To TaskList List</a
@@ -35,30 +44,31 @@
             >Delete project</a
           >
         </li>
-      </ul>
+      </ul> -->
     </div>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">{{ project.description }}</div>
 </div>
-<div class="row">
-  <div class="col-xs-12">
-    <ul class="list-group list-group-item-action">
-      <h4>Project Tasks</h4>
-      <li
-        class="list-group-item"
-        routerLinkActive="active"
-        *ngFor="let task of project.tasks"
-      >
-        <div class="row">
-          <div class="col-xs-6">
-            <span id="done">{{ task.name }}</span>
-            <span class="badge badge-pill badge-primary pull-right">
-              Priority: {{ task.priority }}</span
-            >
-          </div>
-          <div class="col-xs-6">
+<div class="list">
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="list-group list-group-item-action">
+        <h4>Project Tasks</h4>
+        <li
+          class="list-group-item"
+          routerLinkActive="active"
+          *ngFor="let task of project.tasks"
+        >
+          <div class="row">
+            <div class="col-xs-6">
+              <span id="done">{{ task.name }}</span>
+              <span class="badge badge-pill badge-primary pull-right">
+                Priority: {{ task.priority }}</span
+              >
+            </div>
+            <!-- <div class="col-xs-6">
             <button
               class="btn btn-success float-right"
               data-toggle="tooltip"
@@ -93,9 +103,10 @@
             >
               Delete
             </button>
+          </div> -->
           </div>
-        </div>
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

@@ -27,6 +27,7 @@ export class ProjectDetailComponent implements OnInit {
           this.project = this.projectService.getProject(this.id);
         }
       );
+
   }
 
   onAddToTaskListList() {
@@ -50,6 +51,8 @@ export class ProjectDetailComponent implements OnInit {
   onDeferTask() {
     console.log(this.project.tasks)
   }
+
+
 
 
 }

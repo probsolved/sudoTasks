@@ -33,37 +33,43 @@
           gear.
         </h3>
       </div>
-    </div>
-    <div class="col-xs-6" [ngSwitch]="dropDownValue">
-      <div *ngSwitchCase="'1'">
-        <h2>// Recharge Mode</h2>
-        <p class="badge rounded-pill bg-primary">Personal Recharge</p>
-        <p class="badge rounded-pill bg-primary">Completely Unplugged</p>
-      </div>
+      <div class="col-xs-6" [ngSwitch]="dropDownValue">
+        <div *ngSwitchCase="'1'">
+          <h2>// Recharge Mode</h2>
+          <p class="badge rounded-pill bg-primary">Personal Recharge</p>
+          <p class="badge rounded-pill bg-primary">Completely Unplugged</p>
+        </div>
 
-      <div *ngSwitchCase="'2'">
-        <h2>// Connect Mode</h2>
-        <p class="badge rounded-pill bg-primary">Present with Family/Friends</p>
-        <p class="badge rounded-pill bg-primary">No Work</p>
-      </div>
-      <div *ngSwitchCase="'3'">
-        <h2>// Social Mode</h2>
-        <p class="badge rounded-pill bg-primary">Present with people</p>
-        <p class="badge rounded-pill bg-primary">Can shift up or down easily</p>
-        <p class="badge rounded-pill bg-primary">Interrupt as needed</p>
-      </div>
-      <div *ngSwitchCase="'4'">
-        <h2>// Task Mode</h2>
-        <p class="badge rounded-pill bg-primary">Multi-tasking</p>
-        <p class="badge rounded-pill bg-primary">Working hard</p>
-        <p class="badge rounded-pill bg-primary">Interupt only if necessary</p>
-      </div>
-      <div *ngSwitchCase="'5'">
-        <h2>// Focus Mode</h2>
-        <p class="badge rounded-pill bg-primary">Task-centered</p>
-        <p class="badge rounded-pill bg-primary">fully focused</p>
-        <p class="badge rounded-pill bg-primary">moving quickly</p>
-        <p class="badge rounded-pill bg-primary">Please do not interrupt</p>
+        <div *ngSwitchCase="'2'">
+          <h2>// Connect Mode</h2>
+          <p class="badge rounded-pill bg-primary">
+            Present with Family/Friends
+          </p>
+          <p class="badge rounded-pill bg-primary">No Work</p>
+        </div>
+        <div *ngSwitchCase="'3'">
+          <h2>// Social Mode</h2>
+          <p class="badge rounded-pill bg-primary">Present with people</p>
+          <p class="badge rounded-pill bg-primary">
+            Can shift up or down easily
+          </p>
+          <p class="badge rounded-pill bg-primary">Interrupt as needed</p>
+        </div>
+        <div *ngSwitchCase="'4'">
+          <h2>// Task Mode</h2>
+          <p class="badge rounded-pill bg-primary">Multi-tasking</p>
+          <p class="badge rounded-pill bg-primary">Working hard</p>
+          <p class="badge rounded-pill bg-primary">
+            Interupt only if necessary
+          </p>
+        </div>
+        <div *ngSwitchCase="'5'">
+          <h2>// Focus Mode</h2>
+          <p class="badge rounded-pill bg-primary">Task-centered</p>
+          <p class="badge rounded-pill bg-primary">fully focused</p>
+          <p class="badge rounded-pill bg-primary">moving quickly</p>
+          <p class="badge rounded-pill bg-primary">Please do not interrupt</p>
+        </div>
       </div>
     </div>
   </div>

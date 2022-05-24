@@ -12,3 +12,7 @@ button {
 .done {
   text-decoration: line-through;
 }
+
+.list {
+  margin-top: 2rem;
+}
